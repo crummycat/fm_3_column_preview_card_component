@@ -10,6 +10,7 @@ domReady(() => {
   document.body.style.visibility = "visible";
   var element = document.getElementsByClassName("preload");
   element[0].classList.remove("preload");
+  console.log(document.body.style.visibility);
 });
 
 /* Credit to Alastair Campbell for providing the basis of this script */
