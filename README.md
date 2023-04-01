@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/crummycat/fm_3_column_preview_card_component)
+- Live Site URL: [Github Page](https://crummycat.github.io/fm_3_column_preview_card_component/)
 
 ## My process
 
