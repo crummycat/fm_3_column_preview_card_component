@@ -48,6 +48,9 @@ Users should be able to:
 ### Useful resources
 
 - [How to build accessible cards–block links](https://www.nomensa.com/blog/how-build-accessible-cards-block-links) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Get rid of the flash of unstyled content](https://medium.com/@fbnlsr/how-to-get-rid-of-the-flash-of-unstyled-content-d6b79bf5d75f)
+- [Get rid of the flash of unstyled content](https://medium.com/@fbnlsr/how-to-get-rid-of-the-flash-of-unstyled-content-d6b79bf5d75f)
+- [Transitions Only After Page Load](https://css-tricks.com/transitions-only-after-page-load/)
 
 ## Author
 

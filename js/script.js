@@ -1,4 +1,13 @@
-window.addEventListener("load", (event) => {
+// Helper function
+let domReady = (cb) => {
+  document.readyState === "interactive" || document.readyState === "complete"
+    ? cb()
+    : document.addEventListener("DOMContentLoaded", cb);
+};
+
+domReady(() => {
+  // Display body when DOM is loaded
+  document.body.style.visibility = "visible";
   var element = document.getElementsByClassName("preload");
   element[0].classList.remove("preload");
 });
@@ -11,7 +20,6 @@ function linkBoxes() {
 
   boxes.forEach(function (box) {
     var link = box.querySelector("a");
-    console.log(link);
     if (link) {
       var url = link.getAttribute("href");
       box.addEventListener("click", function () {
