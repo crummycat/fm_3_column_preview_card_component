@@ -1,0 +1,260 @@
+:root {
+  --white: #f2f2f2;
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+
+  --font-color-card: var(--white);
+  --font-color: var(--very-dark-cyan);
+  --background-color: var(--white);
+  --card-background-color-1: var(--bright-orange);
+  --card-background-color-2: var(--dark-cyan);
+  --card-background-color-3: var(--very-dark-cyan);
+  --link-color: var(--dark-cyan);
+
+  --padding: 44px;
+  --border-radius: 10px;
+  --border-radius-button: calc(var(--border-radius) * 2);
+  --font-family-title: "Big Shoulders Display", cursive;
+  --font-family: "Lexend Deca", sans-serif;
+  --font-normal: 400;
+  --font-bold: 700;
+  --font-size: 0.93rem;
+  --font-size-body: var(--font-size);
+  --font-size-title: 2.6rem;
+  --font-size-small: 0.65rem;
+  --font-body-lineheight: 1.7rem;
+
+  --page-load-delay: 300ms;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+/* Layout */
+body {
+  margin: 0;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-size: var(--font-size);
+  font-weight: var(--font-normal);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+}
+main {
+  margin: 0 auto;
+  padding: 11vh var(--padding);
+  display: grid;
+  max-width: 460px;
+
+  animation-iteration-count: 1;
+  animation: card-load 500ms ease-in var(--page-load-delay);
+  animation-fill-mode: forwards;
+  transform: scale(0);
+  opacity: 0;
+}
+footer {
+  margin-top: auto;
+}
+
+/* Button */
+.cta {
+  background-color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: var(--border-radius-button);
+  padding: calc(var(--padding) / 3) calc(var(--padding) / 2);
+  align-self: self-start;
+  cursor: pointer;
+
+  transition: 500ms;
+}
+
+/* Card */
+.card {
+  padding: var(--padding);
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+  color: var(--font-color-card);
+  display: flex;
+  flex-direction: column;
+}
+.card:nth-child(1) {
+  background-color: var(--card-background-color-1);
+}
+.card:nth-child(1) .cta {
+  color: var(--card-background-color-1);
+}
+.card:nth-child(2) {
+  background-color: var(--card-background-color-2);
+}
+.card:nth-child(2) .cta {
+  color: var(--card-background-color-2);
+}
+.card:nth-child(3) {
+  background-color: var(--card-background-color-3);
+}
+.card:nth-child(3) .cta {
+  color: var(--card-background-color-3);
+}
+
+.card-title {
+  font-family: var(--font-family-title);
+  font-weight: var(--font-bold);
+  font-size: var(--font-size-title);
+  padding: var(--padding) 0;
+  text-transform: uppercase;
+}
+.card-title a {
+  text-decoration: none;
+  color: var(--white);
+}
+.card-body {
+  font-size: var(--font-size-body);
+  padding-bottom: calc(var(--padding) / 2);
+  line-height: var(--font-body-lineheight);
+  opacity: 0.8;
+}
+.card .cta {
+  margin-top: auto;
+}
+
+@keyframes card-load {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  80% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Accessible Card Links */
+.linkify:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 5px 2px rgba(5, 5, 5, 0.4);
+  z-index: 100;
+}
+
+.linkify:focus {
+  cursor: pointer;
+  box-shadow: 2px 2px 5px 2px rgba(5, 5, 5, 0.4);
+  z-index: 100;
+  outline: 2px solid var(--white);
+}
+
+.isfocused a:focus {
+  outline: none;
+}
+
+.linkify:hover .cta {
+  background-color: transparent;
+  color: var(--white);
+}
+
+/* Attribution */
+.attribution {
+  font-size: var(--font-size-small);
+  text-align: right;
+  padding: var(--padding);
+}
+.attribution a {
+  color: var(--link-color);
+}
+
+@media (min-width: 921px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 920px;
+  }
+  .card:nth-child(1) {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+  }
+  .card:nth-child(3) {
+    background-color: var(--card-background-color-3);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+  .card-body {
+    padding-bottom: calc(var(--padding) * 2);
+  }
+}
