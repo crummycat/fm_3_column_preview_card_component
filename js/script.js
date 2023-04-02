@@ -38,7 +38,7 @@ function linkBoxes() {
       /* Inject CTA in to cards as visual affordance but hide from assistive tech announcements */
       box.insertAdjacentHTML(
         "beforeend",
-        '<span class="cta" aria-hidden="true">Read more</span>'
+        '<span class="cta" aria-hidden="true">Learn more</span>'
       );
     }
   });
